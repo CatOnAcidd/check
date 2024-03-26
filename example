@@ -1,17 +1,17 @@
 {
-  "dns_server_configured":{
-    "description":"Configure Trusted DNS Servers on Enterprise Assets",
-    "api_endpoint": "/system/dns",
-    "cis_control":"4.9"
-  },
   "admin_access": {
-    "description": "Encrypt Sensitive Data in Transit",
-    "api_endpoint": "/system/interface",
-    "cis_control": "3.10"
+    "description": "Ensure administrative access is secure",
+    "api_endpoint": "/system/admin",
+    "cis_control": "5.2"
+  },
+  "system_updates": {
+    "description": "Validate system update configurations",
+    "api_endpoint": "/system/autoupdate/schedule",
+    "cis_control": "2.1"
   },
   "password_policy": {
-    "description": "Use Unique Passwords",
+    "description": "Enforce secure password policies",
     "api_endpoint": "/system/password-policy",
-    "cis_control": "5.2"
+    "cis_control": "5.1.1"
   }
 }
