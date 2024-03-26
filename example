@@ -1,17 +1,43 @@
 {
-  "admin_access": {
-    "description": "Ensure administrative access is secure",
-    "api_endpoint": "/system/admin",
-    "cis_control": "5.2"
+  "dns_server_configured":{
+    "description":"Configure Trusted DNS Servers on Enterprise Assets",
+    "description_expanded":"Fortinet uses the Domain Name Service (DNS) to translate host names into IP addresses. To enable DNS lookups, you must specify the primary DNS server for your system. You can also specify secondary and tertiary DNS servers. When resolving hostnames, the system consults the primary name server. If a failure or time-out occurs, the system consults the secondary name server. For security purpose, trusted DNS servers should be configured to prevent man-in-the-middle attacks.",
+    "api_endpoint": "/system/dns",
+    "cis_level":"1",
+    "section":"Network Settings",
+    "fortinet_reference":"https://docs.fortinet.com/document/fortigate/6.4.1/administration-guide/903162/important-dns-cli-commands",
+    "cis_control":"4.9"
   },
-  "system_updates": {
-    "description": "Validate system update configurations",
-    "api_endpoint": "/system/autoupdate/schedule",
-    "cis_control": "2.1"
+  "ntp":{
+    "description":"Standardize Time Synchronization",
+    "description_expanded":"You can either manually set the FortiOS system time, or configure the device to automatically keep its system time correct by synchronizing with a Network Time Protocol (NTP) server. These settings enable the use of primary and secondary NTP servers to provide redundancy in case of a failure involving the primary NTP server.",
+    "api_endpoint": "system/ntp",
+    "cis_level":"1",
+    "section":"General Settings",
+    "fortinet_reference":"https://docs.fortinet.com/document/fortigate/7.0.0/administration-guide/512210/setting-the-system-time",
+    "cis_control":"8.4"
+  },
+  "admin_access": {
+    "description": "Encrypt Sensitive Data in Transit",
+    "api_endpoint": "/system/interface",
+    "cis_level":"1",
+    "section":"Administrators and Admin Profiles",
+    "reference":"https://docs.fortinet.com/document/fortigate/6.0.0/handbook/909236/configuring-administrative-access-to-interfaces",
+    "cis_control": "3.10"
+  },
+  "event_logging": {
+    "description": "Centralize Audit Logs",
+    "api_endpoint": "/log.fortianalyzer/setting",
+    "cis_level":"2",
+    "section":"General Settings",
+    "cis_control": "8.9"
   },
   "password_policy": {
-    "description": "Enforce secure password policies",
+    "description": "Use Unique Passwords",
+    "description_expanded":"Use unique passwords for all enterprise assets. Best practice implementation includes, at a minimum, an 8-character password for accounts using MFA and a 14-character password for accounts not using MFA.",
     "api_endpoint": "/system/password-policy",
-    "cis_control": "5.1.1"
+    "cis_level":"1",
+    "fortinet_reference":"https://docs.fortinet.com/document/fortigate/7.0.0/administration-guide/364729/password-policy",
+    "cis_control": "5.2"
   }
 }
