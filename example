@@ -1,1 +1,17 @@
-'2.1.6': '/system/firmware'
+{
+  "admin_access": {
+    "description": "Ensure administrative access is secure",
+    "api_endpoint": "/system/admin",
+    "cis_control": "5.2"
+  },
+  "system_updates": {
+    "description": "Validate system update configurations",
+    "api_endpoint": "/system/autoupdate/schedule",
+    "cis_control": "2.1"
+  },
+  "password_policy": {
+    "description": "Enforce secure password policies",
+    "api_endpoint": "/system/password-policy",
+    "cis_control": "5.1.1"
+  }
+}
